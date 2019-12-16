@@ -1,26 +1,25 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from "react";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import Home from "./pages/Home";
+import "bootstrap/dist/css/bootstrap.min.css";
+import Nav from "./pages/Nav";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+// Op de homepage voegen we bovenaan een input toe (volledige breedte, beetje margin)
+// daaronder een listgroup met links (over de volledige breedte)
+
+class App extends Component {
+  render() {
+    return (
+      <Router>
+        <Nav />
+
+        <Switch>
+          <Route path="/pokemon" />
+          <Route path="/" component={Home} />
+        </Switch>
+      </Router>
+    );
+  }
 }
 
 export default App;
