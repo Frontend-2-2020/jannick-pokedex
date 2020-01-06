@@ -2,10 +2,10 @@ import React, { Component } from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Home from "./pages/Home";
 import "bootstrap/dist/css/bootstrap.min.css";
-import Nav from "./pages/Nav";
+import Nav from "./Nav";
+import Detail from "./pages/Detail";
 
-// Op de homepage voegen we bovenaan een input toe (volledige breedte, beetje margin)
-// daaronder een listgroup met links (over de volledige breedte)
+// ID achter "detail" plaatsen in de titel
 
 class App extends Component {
   render() {
@@ -14,7 +14,7 @@ class App extends Component {
         <Nav />
 
         <Switch>
-          <Route path="/pokemon" />
+          <Route path="/pokemon/:pokemonId" component={Detail} />
           <Route path="/" component={Home} />
         </Switch>
       </Router>
